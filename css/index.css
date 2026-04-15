@@ -6256,3 +6256,84 @@ a:hover {
     border-radius: 12px;
   }
 }
+
+
+/* homepage enhancements */
+#home-enhance {
+  margin-bottom: 1.25rem;
+}
+.home-enhance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.home-enhance-card {
+  display: block;
+  padding: 16px 16px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(20, 184, 166, 0.06));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.home-enhance-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+.home-enhance-card .kicker {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.home-enhance-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+.home-enhance-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #4b5563;
+}
+.home-enhance-panel {
+  border-radius: 14px;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 12px 14px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), rgba(251, 191, 36, 0.08));
+}
+.home-enhance-panel .panel-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.home-enhance-panel .panel-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.home-enhance-panel .panel-meta span {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 12px;
+}
+[data-theme='dark'] .home-enhance-card {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.14), rgba(15, 23, 42, 0.22));
+  border-color: rgba(45, 212, 191, 0.35);
+}
+[data-theme='dark'] .home-enhance-card p {
+  color: rgba(255, 255, 255, 0.72);
+}
+[data-theme='dark'] .home-enhance-panel {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.18), rgba(15, 23, 42, 0.28));
+  border-color: rgba(245, 158, 11, 0.4);
+}
+[data-theme='dark'] .home-enhance-panel .panel-meta span {
+  background: rgba(2, 6, 23, 0.58);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+@media screen and (max-width: 900px) {
+  .home-enhance-grid {
+    grid-template-columns: 1fr;
+  }
+}
