@@ -242,13 +242,14 @@
   color: #4b5563;
   line-height: 1.65;
 }
-#resume-verify-input {
+#resume-verify-card input {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 10px 12px;
   font-size: 0.98rem;
+  margin-top: 10px;
 }
 #resume-verify-submit {
   width: 100%;
@@ -276,33 +277,52 @@
 [data-theme='dark'] #resume-verify-card h3 {
   color: rgba(255, 255, 255, 0.92);
 }
-[data-theme='dark'] #resume-verify-input {
+#resume-verify-hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+#resume-verify-hint a {
+  color: #0f766e;
+}
+[data-theme='dark'] #resume-verify-card input {
   background: #0b1220;
   color: rgba(255, 255, 255, 0.9);
   border-color: rgba(148, 163, 184, 0.35);
+}
+[data-theme='dark'] #resume-verify-hint {
+  color: rgba(255, 255, 255, 0.66);
+}
+[data-theme='dark'] #resume-verify-hint a {
+  color: #2dd4bf;
 }
 </style>
 
 <div id="resume-verify-mask" role="dialog" aria-modal="true" aria-labelledby="resume-verify-title">
   <div id="resume-verify-card">
     <h3 id="resume-verify-title">简历访问验证</h3>
-    <p>问题：我的初三时期的班主任是谁？</p>
-    <input id="resume-verify-input" type="text" autocomplete="off" placeholder="请输入答案" />
+    <p>问题 1：我的初三时期的班主任是谁？</p>
+    <input id="resume-verify-input-teacher" type="text" autocomplete="off" placeholder="请输入问题 1 的答案" />
+    <p>问题 2：我的名字是什么？</p>
+    <input id="resume-verify-input-name" type="text" autocomplete="off" placeholder="请输入问题 2 的答案" />
     <button id="resume-verify-submit" type="button">验证并进入</button>
     <div id="resume-verify-error"></div>
+    <div id="resume-verify-hint">如需联系我，可发邮件到 <a href="mailto:maxkarl1921@gmail.com">maxkarl1921@gmail.com</a></div>
   </div>
 </div>
 
 <script>
 (function () {
-  var KEY = 'resume_gate_passed_v1';
-  var ANSWER = '黄慧红';
+  var KEY = 'resume_gate_passed_v2';
+  var ANSWER_TEACHER = '黄慧红';
+  var ANSWER_NAME = '董盛伟';
   var mask = document.getElementById('resume-verify-mask');
-  var input = document.getElementById('resume-verify-input');
+  var inputTeacher = document.getElementById('resume-verify-input-teacher');
+  var inputName = document.getElementById('resume-verify-input-name');
   var button = document.getElementById('resume-verify-submit');
   var error = document.getElementById('resume-verify-error');
 
-  if (!mask || !input || !button || !error) return;
+  if (!mask || !inputTeacher || !inputName || !button || !error) return;
 
   try {
     if (localStorage.getItem(KEY) === '1') {
@@ -316,21 +336,31 @@
   };
 
   var verify = function () {
-    if (normalize(input.value) === ANSWER) {
+    var teacherOk = normalize(inputTeacher.value) === ANSWER_TEACHER;
+    var nameOk = normalize(inputName.value) === ANSWER_NAME;
+    if (teacherOk && nameOk) {
       try { localStorage.setItem(KEY, '1'); } catch (e) {}
       mask.remove();
       return;
     }
     error.textContent = '答案不正确，请重试。';
-    input.focus();
-    input.select();
+    if (!teacherOk) {
+      inputTeacher.focus();
+      inputTeacher.select();
+      return;
+    }
+    inputName.focus();
+    inputName.select();
   };
 
   button.addEventListener('click', verify);
-  input.addEventListener('keydown', function (event) {
+  inputTeacher.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') verify();
   });
-  input.focus();
+  inputName.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') verify();
+  });
+  inputTeacher.focus();
 })();
 </script>
 </body></html>
