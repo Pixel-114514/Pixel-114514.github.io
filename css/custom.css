@@ -1206,3 +1206,233 @@ body {
     height: 180px;
   }
 }
+
+/* ui-ux-pro-max guided polish */
+:root {
+  --focus-ring: 0 0 0 4px rgba(44, 122, 114, 0.22);
+  --surface-strong: rgba(255, 252, 248, 0.96);
+  --surface-soft: rgba(255, 249, 242, 0.8);
+  --text-main: #183247;
+  --text-soft: rgba(24, 50, 71, 0.78);
+  --elev-1: 0 14px 30px rgba(18, 33, 49, 0.08);
+  --elev-2: 0 22px 48px rgba(18, 33, 49, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-main);
+}
+
+a,
+button,
+input,
+.site-page,
+.hero-action,
+.profile-button,
+#card-info-btn {
+  min-height: 44px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.site-page:focus-visible,
+.hero-action:focus-visible,
+.profile-button:focus-visible,
+#card-info-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 14px;
+}
+
+#nav .site-page,
+#toggle-menu .site-page,
+.hero-action,
+.profile-button,
+#aside-content .card-info #card-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav .menus_items .menus_item .site-page,
+#toggle-menu .site-page {
+  padding: 0 12px;
+}
+
+#page-header.full_page #site_social_icons .social-icon,
+#aside-content .card-info-social-icons .social-icon {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+#page-header.full_page #site_social_icons .social-icon:hover,
+#aside-content .card-info-social-icons .social-icon:hover {
+  transform: translateY(-2px);
+}
+
+.hero-badge,
+.hero-strip span,
+.panel-meta span,
+.author-badges span,
+#recent-posts .article-meta__categories,
+#recent-posts .article-meta__tags,
+#aside-content .card-tag-cloud a {
+  white-space: nowrap;
+}
+
+.hero-focus-card,
+.home-enhance-card,
+.signal-card,
+.spotlight-item,
+.profile-card,
+.project-card,
+#aside-content .card-widget,
+#recent-posts > .recent-post-item,
+#page,
+#post {
+  box-shadow: var(--elev-1);
+}
+
+#recent-posts > .recent-post-item:hover,
+.project-card:hover,
+.home-enhance-card:hover,
+.spotlight-item:hover {
+  box-shadow: var(--elev-2);
+}
+
+.home-enhance-card,
+.signal-card,
+.profile-card,
+.project-card,
+.spotlight-item {
+  border-color: rgba(22, 50, 71, 0.08);
+}
+
+.home-enhance-card p,
+.signal-value,
+.home-spotlight p,
+.announcement-panel p,
+#recent-posts > .recent-post-item .content,
+.profile-hero p,
+.profile-card p,
+.profile-card li,
+.project-card li {
+  color: var(--text-soft);
+}
+
+#recent-posts > .recent-post-item .article-title,
+.home-enhance-card h3,
+.home-spotlight h2,
+.profile-hero h2,
+.profile-card h3,
+.project-card h4 {
+  text-wrap: balance;
+}
+
+#recent-posts > .recent-post-item .article-title {
+  font-size: clamp(1.28rem, 2vw, 1.72rem);
+}
+
+#aside-content .aside-list > .aside-list-item .title,
+#recent-posts > .recent-post-item .article-title {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.profile-button,
+.hero-action,
+#resume-verify-submit {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.profile-button--ghost,
+.hero-action.secondary {
+  border: 1px solid rgba(22, 50, 71, 0.14);
+}
+
+.profile-hero__stats,
+.hero-focus-grid,
+.home-enhance-grid,
+.home-signal-board,
+.spotlight-list {
+  align-items: stretch;
+}
+
+.profile-stat strong,
+.focus-value,
+.signal-value {
+  font-variant-numeric: tabular-nums;
+}
+
+#resume-verify-card p,
+#resume-verify-hint,
+#resume-verify-error {
+  line-height: 1.7;
+}
+
+#resume-verify-error {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #recent-posts > .recent-post-item .post_cover .post-bg,
+  #page-header.full_page #site_social_icons .social-icon:hover,
+  #aside-content .card-info-social-icons .social-icon:hover,
+  .hero-action:hover,
+  .project-card:hover,
+  .home-enhance-card:hover {
+    transform: none !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero-badge,
+  .hero-strip span,
+  .panel-meta span,
+  .author-badges span {
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #nav .menus_items .menus_item .site-page,
+  #toggle-menu .site-page {
+    min-height: 44px;
+    padding: 0 10px;
+  }
+
+  #recent-posts > .recent-post-item > .recent-post-info,
+  #recent-posts > .recent-post-item > .recent-post-info.no-cover {
+    padding: 24px 20px;
+  }
+
+  .hero-focus-card,
+  .home-enhance-card,
+  .signal-card,
+  .spotlight-item,
+  .profile-card,
+  .project-card {
+    padding: 14px;
+  }
+
+  .profile-button,
+  .hero-action {
+    width: 100%;
+  }
+}
