@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import gfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import rehypeHighlight from 'rehype-highlight';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts');
@@ -71,7 +73,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
   const processedContent = await remark()
     .use(gfm)
+    .use(remarkMath)
     .use(html, { sanitize: false })
+    .use(rehypeKatex)
     .process(content);
 
   return {
