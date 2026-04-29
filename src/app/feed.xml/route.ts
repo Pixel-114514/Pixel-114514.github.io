@@ -15,7 +15,7 @@ export async function GET() {
     copyright: `© ${new Date().getFullYear()} 椎名立希`,
     author: {
       name: '椎名立希',
-      email: 'dengshengwei1@gmail.com',
+      email: 'maxkarl1921@gmail.com',
       link: SITE_URL,
     },
   });

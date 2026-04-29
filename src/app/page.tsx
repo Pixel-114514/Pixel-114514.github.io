@@ -91,7 +91,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-4">
             <a
-              href="mailto:dengshengwei1@gmail.com"
+              href="mailto:maxkarl1921@gmail.com"
               className="font-mono text-sm px-5 py-2.5 bg-accent text-white rounded-md hover:bg-accent-hover transition-colors"
             >
               Get in touch
