@@ -2,11 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
 import gfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts');
 
@@ -74,8 +75,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const processedContent = await remark()
     .use(gfm)
     .use(remarkMath)
-    .use(html, { sanitize: false })
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeKatex)
+    .use(rehypeHighlight)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content);
 
   return {
