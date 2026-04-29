@@ -4,12 +4,13 @@ import { useEffect, useRef } from 'react';
 
 const GISCUS_CONFIG = {
   repo: 'Pixel-114514/Pixel-114514.github.io',
-  repoId: '', // TODO: fill from giscus.app
+  repoId: 'R_kgDOSC7EBw',
   category: 'Announcements',
-  categoryId: '', // TODO: fill from giscus.app
+  categoryId: 'DIC_kwDOSC7EB84C7-OI',
   mapping: 'pathname',
   reactionsEnabled: '1',
   emitMetadata: '0',
+  inputPosition: 'bottom' as const,
   theme: 'preferred_color_scheme',
   lang: 'zh-CN',
 };
@@ -33,21 +34,13 @@ export function Comments() {
     script.setAttribute('data-mapping', GISCUS_CONFIG.mapping);
     script.setAttribute('data-reactions-enabled', GISCUS_CONFIG.reactionsEnabled);
     script.setAttribute('data-emit-metadata', GISCUS_CONFIG.emitMetadata);
+    script.setAttribute('data-input-position', GISCUS_CONFIG.inputPosition);
     script.setAttribute('data-theme', GISCUS_CONFIG.theme);
     script.setAttribute('data-lang', GISCUS_CONFIG.lang);
 
     ref.current.innerHTML = '';
     ref.current.appendChild(script);
   }, []);
-
-  // Show hint when config is incomplete
-  if (!GISCUS_CONFIG.repoId || !GISCUS_CONFIG.categoryId) {
-    return (
-      <div className="mt-8 py-6 text-center font-mono text-xs text-text-tertiary border border-border rounded-lg">
-        Comments section — configure giscus to enable
-      </div>
-    );
-  }
 
   return <div ref={ref} className="giscus mt-8" />;
 }

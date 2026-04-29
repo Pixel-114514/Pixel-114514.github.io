@@ -48,14 +48,11 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
           crossOrigin="anonymous"
         />
-        {/* Umami Analytics — TODO: fill data-website-id and src after registration */}
-        {false && (
-          <script
-            async
-            src="https://cloud.umami.is/script.js"
-            data-website-id=""
-          />
-        )}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="fb898c0a-ec41-47bd-9848-0c11dbe9d3c7"
+        />
       </head>
       <body className="noise">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
