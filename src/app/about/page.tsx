@@ -28,6 +28,7 @@ const projects = [
     name: '基于物理一致性的高效流场超分辨率重建',
     role: '第二作者 | CVPR 2026 录用',
     period: '2025.07 — 2025.12',
+    link: 'https://github.com/Pixel-114514/DiffSR-clean',
     highlights: [
       '负责前期文献调研，针对传统模型在流场重建中易引入伪影、忽略物理约束的问题，创新性地提出将残差扩散模型应用于流体超分任务',
       '搭建基于 PyTorch 的统一训练与评估框架，实现日志记录、模型断点重训、推理及多 GPU 并行训练；清洗整理 NS2D、ERA5 等流体数据集',
@@ -40,6 +41,7 @@ const projects = [
     name: '铁路标准纠正性检索增强生成系统',
     role: '独立开发',
     period: '2025.12 — 2026.02',
+    link: 'https://github.com/Pixel-114514/railway_aide',
     highlights: [
       '通过爬虫模块抓取标准预览图；利用 MinerU 2.5 视觉模型解析复杂排版，输出结构化 Markdown 知识库',
       '实现置信度评估器（Evaluator），使用小模型对检索文档打分，通过阈值机制实现自纠错路由（本地知识细化/网络搜索/混合增强）',
@@ -144,7 +146,13 @@ export default function AboutPage() {
               {projects.map((proj) => (
                 <div key={proj.name} className="p-5 rounded-xl border border-border bg-bg-secondary/50">
                   <div className="flex flex-col md:flex-row md:items-start justify-between mb-1">
-                    <h3 className="font-semibold text-text-primary">{proj.name}</h3>
+                    <h3 className="font-semibold text-text-primary">
+                      {proj.link ? (
+                        <a href={proj.link} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors underline underline-offset-4 decoration-accent/30 hover:decoration-accent">
+                          {proj.name}
+                        </a>
+                      ) : proj.name}
+                    </h3>
                     <span className="font-mono text-xs text-text-tertiary mt-1 md:mt-0 shrink-0 ml-4">{proj.period}</span>
                   </div>
                   <p className="text-sm text-accent font-mono mb-3">{proj.role}</p>

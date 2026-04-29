@@ -17,19 +17,19 @@ const featuredProjects = [
     title: '流场超分辨率重建',
     description: '基于物理一致性的高效流场超分辨率重建。创新性地将残差扩散模型应用于流体超分任务，NS2D 4倍超分 RMSE 达到 SOTA。CVPR 2026 录用（第二作者）。',
     tech: ['PyTorch', 'Diffusion Model', 'CVPR 2026'],
-    link: 'https://github.com/Pixel-114514',
+    link: 'https://github.com/Pixel-114514/DiffSR-clean',
   },
   {
     title: '铁路标准 CRAG 系统',
     description: '铁路标准纠正性检索增强生成系统。通过置信度评估器实现自纠错路由，解决传统 RAG 检索无关文档和知识库时效性痛点。',
     tech: ['Python', 'CRAG', 'RAG', 'MinerU'],
-    link: 'https://github.com/Pixel-114514',
+    link: 'https://github.com/Pixel-114514/railway_aide',
   },
   {
     title: '海洋灾害智能预警',
     description: '数据驱动的海洋风险灾害智能预警系统。基于 LSTM 的海洋叶绿素浓度时序预测填补模型。省级大创结题项目。',
     tech: ['Python', 'LSTM', '时序预测'],
-    link: 'https://github.com/Pixel-114514',
+    link: undefined,
   },
 ];
 
