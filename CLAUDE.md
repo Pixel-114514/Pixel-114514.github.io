@@ -123,6 +123,34 @@ LaTeX math is rendered via `remark-math` + `rehype-katex` (KaTeX CSS loaded from
 
 Pipeline in `src/lib/posts.ts`: `remark-gfm → remark-math → remark-rehype → rehype-katex → rehype-highlight → rehype-stringify`
 
+## Comments (giscus)
+
+Blog posts have a comment section powered by [giscus](https://giscus.app), which stores comments in GitHub Discussions.
+
+Configuration is in `src/components/Comments.tsx` → `GISCUS_CONFIG`.
+
+If you ever need to reconfigure:
+
+1. Go to https://giscus.app
+2. Enter repository: `Pixel-114514/Pixel-114514.github.io`
+3. Choose mapping: **pathname**, category: **Announcements**
+4. Copy the generated `data-repo-id` and `data-category-id` into `GISCUS_CONFIG`
+
+Prerequisites:
+- giscus GitHub App installed on the repo: https://github.com/apps/giscus
+- Discussions enabled in repo Settings → Features
+
+## Analytics (Umami)
+
+Visitor tracking via [Umami](https://cloud.umami.is). The tracking script is in `src/app/layout.tsx` → `<head>`.
+
+Dashboard: https://cloud.umami.is (login required)
+
+If you need to reconfigure:
+1. Log into Umami dashboard
+2. Go to the website settings to find the `data-website-id`
+3. Update the `<script>` tag in `layout.tsx`
+
 ## Design System
 
 ### Colors (CSS variables in globals.css)
