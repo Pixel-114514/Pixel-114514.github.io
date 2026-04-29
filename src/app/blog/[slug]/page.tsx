@@ -3,6 +3,7 @@ import { buildPageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { BlogPostContent } from '@/components/BlogPostContent';
+import { Comments } from '@/components/Comments';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -95,6 +96,9 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </a>
           </div>
         </div>
+
+        {/* Comments */}
+        <Comments />
       </article>
     </div>
   );
