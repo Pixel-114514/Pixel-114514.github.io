@@ -1,51 +1,122 @@
-/* Giscus custom theme — matches site design system */
-:root {
-  --color-primary: #22d3ee;
-  --color-primary-hover: #06b6d4;
-  --color-bg-primary: #0a0a0c;
-  --color-bg-secondary: #111114;
-  --color-bg-tertiary: #1a1a1f;
-  --color-border: #2a2a30;
-  --color-text-primary: #e8e6e3;
-  --color-text-secondary: #9ca3af;
-  --color-text-tertiary: #6b7280;
+/* Giscus custom theme — matches site design system (dark) */
+main {
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #e8e6e3;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #22d3ee;
+  --color-prettylights-syntax-markup-italic: #e8e6e3;
+  --color-prettylights-syntax-markup-bold: #e8e6e3;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #e8e6e3;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+
+  /* Buttons */
+  --color-btn-text: #e8e6e3;
+  --color-btn-bg: #1a1a1f;
+  --color-btn-border: #2a2a30;
+  --color-btn-shadow: 0 0 #0000;
+  --color-btn-inset-shadow: 0 0 #0000;
+  --color-btn-hover-bg: #252530;
+  --color-btn-hover-border: #3a3a45;
+  --color-btn-active-bg: #1f1f28;
+  --color-btn-active-border: #3a3a45;
+  --color-btn-selected-bg: #111114;
+
+  /* Primary button (Sign in with GitHub) */
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-bg: #22d3ee;
+  --color-btn-primary-border: #22d3ee33;
+  --color-btn-primary-shadow: 0 0 #0000;
+  --color-btn-primary-inset-shadow: 0 0 #0000;
+  --color-btn-primary-hover-bg: #06b6d4;
+  --color-btn-primary-hover-border: #06b6d433;
+  --color-btn-primary-selected-bg: #0891b2;
+  --color-btn-primary-selected-shadow: 0 0 #0000;
+  --color-btn-primary-disabled-text: #ffffff80;
+  --color-btn-primary-disabled-bg: #22d3ee99;
+  --color-btn-primary-disabled-border: #22d3ee33;
+
+  /* Action list */
+  --color-action-list-item-default-hover-bg: #1a1a1f;
+
+  /* Segmented control */
+  --color-segmented-control-bg: #1a1a1f33;
+  --color-segmented-control-button-bg: #0a0a0c;
+  --color-segmented-control-button-selected-border: #3a3a45;
+
+  /* Text */
+  --color-fg-default: #e8e6e3;
+  --color-fg-muted: #9ca3af;
+  --color-fg-subtle: #6b7280;
+
+  /* Canvas / Background */
+  --color-canvas-default: #0a0a0c;
+  --color-canvas-overlay: #111114;
+  --color-canvas-inset: #0a0a0c;
+  --color-canvas-subtle: #111114;
+
+  /* Borders */
+  --color-border-default: #2a2a30;
+  --color-border-muted: #1f1f25;
+
+  /* Neutral */
+  --color-neutral-muted: #6b728066;
+
+  /* Accent — cyan */
+  --color-accent-fg: #22d3ee;
+  --color-accent-emphasis: #0891b2;
+  --color-accent-muted: #22d3ee44;
+  --color-accent-subtle: #22d3ee1a;
+
+  /* Status */
+  --color-success-fg: #34d399;
+  --color-attention-fg: #f59e0b;
+  --color-attention-muted: #f59e0b66;
+  --color-attention-subtle: #f59e0b26;
+  --color-danger-fg: #f87171;
+  --color-danger-muted: #f8717166;
+  --color-danger-subtle: #f871711a;
+
+  /* Misc */
+  --color-primer-shadow-inset: 0 0 #0000;
+  --color-scale-gray-7: #1a1a1f;
+  --color-scale-blue-8: #164e63;
+
+  /* Social reactions */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
-/* Base */
-body, .giscus {
+/* Transparent background to blend with site */
+body {
   background: transparent !important;
 }
 
-/* Comment input area */
-.giscus .giscus-frame {
-  border: none !important;
+/* Loading animation */
+main .pagination-loader-container {
+  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
 }
-
-/* Reactions */
-.giscus .reaction-btn {
-  border-radius: 6px !important;
-}
-
-/* Links */
-a {
-  color: var(--color-primary) !important;
-}
-
-a:hover {
-  color: var(--color-primary-hover) !important;
-}
-
-/* Code */
-code {
-  background: var(--color-bg-tertiary) !important;
-  border: 1px solid var(--color-border) !important;
-  border-radius: 4px !important;
-  padding: 0.15em 0.4em !important;
-  font-size: 0.875em !important;
-}
-
-pre {
-  background: var(--color-bg-secondary) !important;
-  border: 1px solid var(--color-border) !important;
-  border-radius: 8px !important;
+main .gsc-loading-image {
+  background-image: url(https://github.githubassets.com/images/mona-loading-dark.gif);
 }
