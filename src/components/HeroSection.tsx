@@ -54,8 +54,8 @@ export function HeroSection() {
               <span className="animate-cursor-blink text-accent">|</span>
             </div>
             <p className="text-text-secondary leading-relaxed max-w-lg mb-10">
-              华南农业大学人工智能专业本科生，具备扎实的深度学习算法基础，拥有 CVPR 顶会论文录用经验。
-              专注于 Diffusion Model、RAG、Agent 等方向的研究与工程实践。
+              Building intelligent systems at the intersection of AI and engineering.
+              Focused on research, open-source, and making ideas real.
             </p>
             <div className="flex items-center gap-4">
               <Link
