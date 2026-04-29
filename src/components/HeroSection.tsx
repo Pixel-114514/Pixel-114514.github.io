@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const roles = [
-  'AI Researcher',
-  'Full-Stack Developer',
-  'Open-Source Contributor',
-  'Agent Engineer',
+  'AI 算法工程师',
+  'CVPR 2026 录用',
+  '深度学习研究者',
+  'RAG & Agent 开发',
 ];
 
 export function HeroSection() {
@@ -54,9 +54,8 @@ export function HeroSection() {
               <span className="animate-cursor-blink text-accent">|</span>
             </div>
             <p className="text-text-secondary leading-relaxed max-w-lg mb-10">
-              I build intelligent systems at the intersection of AI and software engineering.
-              Currently focused on agent architectures, LLM applications, and making AI more
-              accessible through open-source work.
+              华南农业大学人工智能专业本科生，具备扎实的深度学习算法基础，拥有 CVPR 顶会论文录用经验。
+              专注于 Diffusion Model、RAG、Agent 等方向的研究与工程实践。
             </p>
             <div className="flex items-center gap-4">
               <Link

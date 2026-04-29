@@ -6,27 +6,27 @@ interface Question {
   id: number;
   question: string;
   options: string[];
-  answer: number; // correct option index
+  answer: number;
 }
 
 const questions: Question[] = [
   {
     id: 1,
-    question: '我在哪个城市读的大学？',
-    options: ['A. 北京', 'B. 青岛', 'C. 上海', 'D. 济南'],
+    question: '我在哪所大学读的本科？',
+    options: ['A. 华南理工大学', 'B. 华南农业大学', 'C. 华中农业大学', 'D. 中山大学'],
     answer: 1,
   },
   {
     id: 2,
-    question: '我在小米AI竞赛中，使用了哪种隐私保护技术？',
-    options: ['A. 差分隐私', 'B. 同态加密', 'C. 联邦学习', 'D. 安全多方计算'],
-    answer: 2,
+    question: '我的 CVPR 论文是第几作者？',
+    options: ['A. 第一作者', 'B. 第二作者', 'C. 第三作者', 'D. 通讯作者'],
+    answer: 1,
   },
   {
     id: 3,
-    question: '我开源的手写汉字数据集有多少样本？',
-    options: ['A. 约1万', 'B. 约3万', 'C. 约5.4万', 'D. 约10万'],
-    answer: 2,
+    question: '我在铁路标准CRAG项目中，用什么视觉模型解析标准文档？',
+    options: ['A. GPT-4V', 'B. MinerU 2.5', 'C. PaddleOCR', 'D. Gemini Pro'],
+    answer: 1,
   },
 ];
 
@@ -126,7 +126,8 @@ export function ResumeGate({ children }: { children: React.ReactNode }) {
 
             {error && (
               <div className="font-mono text-xs text-red-400 mb-4 flex items-center gap-2">
-                <span>$</span> Incorrect. Try again. {attempts >= 3 && '(Hint: think about what I wrote in my blog posts...)'}
+                <span>$</span> Incorrect. Try again.
+                {attempts >= 3 && ' (Hint: the answers are all in the blog posts or public info...)'}
               </div>
             )}
 
