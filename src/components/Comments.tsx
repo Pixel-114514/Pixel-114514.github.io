@@ -11,7 +11,8 @@ const GISCUS_CONFIG = {
   reactionsEnabled: '1',
   emitMetadata: '0',
   inputPosition: 'bottom' as const,
-  theme: 'preferred_color_scheme',
+  theme: 'custom',
+  themeUrl: 'https://11114002.xyz/giscus-theme.css',
   lang: 'zh-CN',
 };
 
@@ -20,7 +21,6 @@ export function Comments() {
 
   useEffect(() => {
     if (!ref.current) return;
-    // Skip if config is incomplete
     if (!GISCUS_CONFIG.repoId || !GISCUS_CONFIG.categoryId) return;
 
     const script = document.createElement('script');
@@ -36,6 +36,7 @@ export function Comments() {
     script.setAttribute('data-emit-metadata', GISCUS_CONFIG.emitMetadata);
     script.setAttribute('data-input-position', GISCUS_CONFIG.inputPosition);
     script.setAttribute('data-theme', GISCUS_CONFIG.theme);
+    script.setAttribute('data-theme-url', GISCUS_CONFIG.themeUrl);
     script.setAttribute('data-lang', GISCUS_CONFIG.lang);
 
     ref.current.innerHTML = '';
