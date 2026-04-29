@@ -121,7 +121,7 @@ LaTeX math is rendered via `remark-math` + `rehype-katex` (KaTeX CSS loaded from
 - Inline math: `$E = mc^2$`
 - Display math: `$$\frac{dx}{dt} = f(x, t)$$`
 
-Pipeline in `src/lib/posts.ts`: `remark-gfm → remark-math → remark-html → rehype-katex`
+Pipeline in `src/lib/posts.ts`: `remark-gfm → remark-math → remark-rehype → rehype-katex → rehype-highlight → rehype-stringify`
 
 ## Design System
 
