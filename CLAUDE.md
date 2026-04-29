@@ -70,7 +70,9 @@ npm run build        # production build (generates /out)
 │   ├── content/
 │   │   └── posts/               # blog posts (Markdown)
 │   │       ├── hello-world.md
-│   │       └── ai-agent-patterns.md
+│   │       ├── ai-agent-patterns.md
+│   │       ├── diffusion-and-flow-matching.md
+│   │       └── ppo-algorithm.md
 │   └── lib/
 │       ├── posts.ts             # blog post reader/parser
 │       └── seo.ts               # SEO metadata builder
@@ -111,6 +113,15 @@ tags: ["tag1", "tag2"]
 3. Write content in Markdown (GFM supported)
 4. Code blocks get syntax highlighting automatically
 5. Posts with `draft: true` in frontmatter are excluded from build
+
+### Math / LaTeX in Blog Posts
+
+LaTeX math is rendered via `remark-math` + `rehype-katex` (KaTeX CSS loaded from CDN in `layout.tsx`).
+
+- Inline math: `$E = mc^2$`
+- Display math: `$$\frac{dx}{dt} = f(x, t)$$`
+
+Pipeline in `src/lib/posts.ts`: `remark-gfm → remark-math → remark-html → rehype-katex`
 
 ## Design System
 
