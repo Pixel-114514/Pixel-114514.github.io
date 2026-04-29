@@ -43,5 +43,9 @@ export function Comments() {
     ref.current.appendChild(script);
   }, []);
 
-  return <div ref={ref} className="giscus mt-8" />;
+  return (
+    <div className="mt-8 p-4 rounded-xl border border-border bg-bg-secondary">
+      <div ref={ref} className="giscus" />
+    </div>
+  );
 }
