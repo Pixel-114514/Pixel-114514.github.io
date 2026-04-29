@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分类 | 椎名立希's Blog</title>
+  <meta name="author" content="椎名立希">
+  <meta name="description" content="按分类查看文章">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-brand" href="/">
+      <img src="/img/avatar.jpg" alt="avatar">
+      <span>椎名立希's Blog</span>
+    </a>
+    <div class="nav-links">
+      <a href="/"><i class="fas fa-home"></i> 首页</a>
+      <a href="/archives/"><i class="fas fa-archive"></i> 归档</a>
+      <a href="/categories/" class="active"><i class="fas fa-folder-open"></i> 分类</a>
+      <a href="/tags/"><i class="fas fa-tags"></i> 标签</a>
+      <a href="/about/"><i class="fas fa-id-card"></i> 关于我</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="darkmode" title="切换暗色模式"><i class="fas fa-adjust"></i></button>
+      <button class="btn-icon mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="layout">
+    <div class="main-content">
+      <div class="page-header">
+        <h1>文章分类</h1>
+        <p>共 4 个分类</p>
+      </div>
+
+      <div class="cat-page-grid anim-up">
+        <div class="cat-page-card">
+          <h3>教程 <span class="count">(3)</span></h3>
+          <ul>
+            <li><a href="/2026/04/15/self-hosted-email/">极低成本自建邮箱：文章预告</a></li>
+            <li><a href="/2026/04/15/gpt-multi-email/">AI 工具邮箱整理：163 与 2925 的低成本方案</a></li>
+            <li><a href="/2026/04/15/cliproxyapi-linux/">Linux 部署 CliproxyAPI：从安装到 Gemini CLI 授权</a></li>
+          </ul>
+        </div>
+        <div class="cat-page-card">
+          <h3>教程 / Linux <span class="count">(1)</span></h3>
+          <ul>
+            <li><a href="/2026/04/15/cliproxyapi-linux/">Linux 部署 CliproxyAPI：从安装到 Gemini CLI 授权</a></li>
+          </ul>
+        </div>
+        <div class="cat-page-card">
+          <h3>教程 / 邮箱 <span class="count">(2)</span></h3>
+          <ul>
+            <li><a href="/2026/04/15/self-hosted-email/">极低成本自建邮箱：文章预告</a></li>
+            <li><a href="/2026/04/15/gpt-multi-email/">AI 工具邮箱整理：163 与 2925 的低成本方案</a></li>
+          </ul>
+        </div>
+        <div class="cat-page-card">
+          <h3>随笔 <span class="count">(1)</span></h3>
+          <ul>
+            <li><a href="/2026/04/15/hello-world/">博客恢复上线说明</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card author-card">
+        <div class="avatar"><img src="/img/avatar.jpg" alt="avatar"></div>
+        <div class="name">椎名立希</div>
+        <div class="badges"><span>AI 算法</span><span>Linux 部署</span><span>工具实践</span></div>
+        <div class="stats">
+          <a href="/archives/"><span class="num">4</span><span class="label">文章</span></a>
+          <a href="/tags/"><span class="num">12</span><span class="label">标签</span></a>
+          <a href="/categories/"><span class="num">4</span><span class="label">分类</span></a>
+        </div>
+        <a class="resume-btn" href="/about/"><i class="fas fa-address-card"></i> 查看简历</a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="card-title"><i class="fas fa-history"></i> 最新文章</div>
+        <div class="sidebar-post">
+          <div class="thumb"><a href="/2026/04/15/self-hosted-email/"><img src="/img/cover-mail.svg" alt="cover"></a></div>
+          <div class="info"><a href="/2026/04/15/self-hosted-email/">极低成本自建邮箱：文章预告</a><time>2026-04-15</time></div>
+        </div>
+        <div class="sidebar-post">
+          <div class="thumb"><a href="/2026/04/15/gpt-multi-email/"><img src="/img/cover-mail.svg" alt="cover"></a></div>
+          <div class="info"><a href="/2026/04/15/gpt-multi-email/">AI 工具邮箱整理</a><time>2026-04-15</time></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="card-title"><i class="fas fa-tags"></i> 标签</div>
+        <div class="tag-cloud">
+          <a href="/tags/部署/">部署</a><a href="/tags/AI-工具/">AI 工具</a><a href="/tags/163/">163</a>
+          <a href="/tags/邮箱/">邮箱</a><a href="/tags/API/">API</a><a href="/tags/Gemini/">Gemini</a>
+          <a href="/tags/Linux/">Linux</a><a href="/tags/自建邮箱/">自建邮箱</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="copyright">&copy; 2026 椎名立希</div>
+  <div class="footer-text">把项目、部署和工具实践写成长期可复用的笔记。</div>
+</footer>
+
+<div class="float-btns">
+  <button class="float-btn scroll-top" title="回到顶部"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

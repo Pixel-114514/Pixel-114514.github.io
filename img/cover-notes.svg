@@ -1,0 +1,23 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="notes-bg" x1="108" y1="68" x2="1090" y2="646" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EF"/>
+      <stop offset="1" stop-color="#F3E8D9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="40" fill="url(#notes-bg)"/>
+  <rect x="86" y="72" width="1028" height="576" rx="34" fill="rgba(255,255,255,0.58)" stroke="rgba(22,50,71,0.08)"/>
+  <rect x="166" y="132" width="540" height="460" rx="28" fill="#FFFDF9" stroke="rgba(22,50,71,0.1)"/>
+  <path d="M246 132V592" stroke="#C56D4B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 214H650" stroke="#D7CEC2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 286H650" stroke="#D7CEC2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 358H650" stroke="#D7CEC2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 430H650" stroke="#D7CEC2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 502H564" stroke="#D7CEC2" stroke-width="8" stroke-linecap="round"/>
+  <text x="768" y="270" fill="#163247" font-family="Georgia, serif" font-size="82" font-weight="700">Builder's Notes</text>
+  <text x="770" y="342" fill="rgba(22,50,71,0.78)" font-family="Georgia, serif" font-size="34">博客更新 / 项目复盘 / 部署记录</text>
+  <rect x="774" y="420" width="246" height="60" rx="30" fill="#173248"/>
+  <text x="828" y="459" fill="#FFF7EE" font-family="monospace" font-size="28">hexo generate</text>
+  <circle cx="1038" cy="522" r="64" fill="#E9B26D"/>
+  <circle cx="1080" cy="566" r="38" fill="#2C7A72"/>
+</svg>

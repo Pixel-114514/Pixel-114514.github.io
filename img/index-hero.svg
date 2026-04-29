@@ -1,0 +1,51 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F2435"/>
+      <stop offset="0.62" stop-color="#17374B"/>
+      <stop offset="1" stop-color="#285568"/>
+    </linearGradient>
+    <radialGradient id="hero-glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 180) rotate(22.4) scale(420 260)">
+      <stop stop-color="#E9B26D" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#E9B26D" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hero-glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1300 170) rotate(161.6) scale(360 240)">
+      <stop stop-color="#C56D4B" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C56D4B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hero-grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,255,255,0.08)"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#hero-bg)"/>
+  <rect width="1600" height="900" fill="url(#hero-grid)"/>
+  <rect width="1600" height="900" fill="url(#hero-glow-left)"/>
+  <rect width="1600" height="900" fill="url(#hero-glow-right)"/>
+  <g opacity="0.88">
+    <circle cx="170" cy="708" r="148" fill="#123046"/>
+    <circle cx="170" cy="708" r="86" fill="#20495C"/>
+    <circle cx="1400" cy="116" r="120" fill="#1D4357"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="1024" y="170" width="364" height="240" rx="32" fill="rgba(255,255,255,0.06)"/>
+    <rect x="1062" y="210" width="288" height="24" rx="12" fill="rgba(255,255,255,0.12)"/>
+    <rect x="1062" y="266" width="232" height="18" rx="9" fill="#E9B26D"/>
+    <rect x="1062" y="300" width="214" height="18" rx="9" fill="rgba(255,255,255,0.16)"/>
+    <rect x="1062" y="334" width="170" height="18" rx="9" fill="#2C7A72"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="1068" y="506" width="238" height="210" rx="30" fill="#F7EDDE"/>
+    <rect x="1112" y="556" width="150" height="12" rx="6" fill="#D79A63"/>
+    <rect x="1112" y="590" width="150" height="12" rx="6" fill="#D6C1A5"/>
+    <rect x="1112" y="624" width="120" height="12" rx="6" fill="#D6C1A5"/>
+    <rect x="1188" y="524" width="86" height="18" rx="9" fill="#173248"/>
+  </g>
+  <g>
+    <text x="120" y="220" fill="#F7EFE4" font-family="Georgia, serif" font-size="44" letter-spacing="8">AI / DEPLOY / NOTES</text>
+    <text x="120" y="360" fill="#FFF8EF" font-family="Georgia, serif" font-size="128" font-weight="700">Build once.</text>
+    <text x="120" y="470" fill="#F4EBDD" font-family="Georgia, serif" font-size="96" font-weight="700">Document the hard parts.</text>
+    <text x="124" y="570" fill="rgba(247,239,228,0.86)" font-family="Georgia, serif" font-size="34">
+      个人简历、Linux 部署、AI 工具实践
+    </text>
+  </g>
+</svg>
