@@ -1,8 +1,8 @@
-import { getPostBySlug, getAllPostSlugs } from '@/lib/posts';
+import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from '@/lib/posts';
 import { buildPageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { BlogPostContent } from '@/components/BlogPostContent';
+import { BlogPostContent, ReadingProgress, ScrollToTop } from '@/components/BlogPostContent';
 import { Comments } from '@/components/Comments';
 
 export async function generateStaticParams() {
@@ -25,8 +25,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = await getPostBySlug(params.slug);
   if (!post) notFound();
 
+  const related = getRelatedPosts(post.slug, post.tags);
+
   return (
     <div className="grid-bg">
+      <ReadingProgress />
+      <ScrollToTop />
       <article className="max-w-3xl mx-auto px-6 py-16">
         {/* Back */}
         <Link
@@ -41,12 +45,20 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
         {/* Header */}
         <header className="mb-12 opacity-0 animate-fade-in">
-          <div className="font-mono text-xs text-text-tertiary mb-4">
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: '2-digit',
-            })}
+          <div className="font-mono text-xs text-text-tertiary mb-4 flex items-center gap-2">
+            <span>
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: '2-digit',
+              })}
+            </span>
+            {post.readingTime && (
+              <>
+                <span className="text-border">·</span>
+                <span>{post.readingTime}</span>
+              </>
+            )}
           </div>
           <h1 className="text-heading font-bold text-text-primary mb-4">
             {post.title}
@@ -75,7 +87,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <div className="border-t border-border mb-10" />
 
         {/* Content */}
-        <BlogPostContent content={post.content} />
+        <BlogPostContent
+          content={post.content}
+          headings={post.headings}
+          relatedPosts={related}
+        />
 
         {/* Footer */}
         <div className="border-t border-border mt-16 pt-8">

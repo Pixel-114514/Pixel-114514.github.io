@@ -292,6 +292,37 @@ code:not(pre code) {
   font-weight: 600;
 }
 
+/* Code copy button */
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+.prose pre:hover .code-copy-btn {
+  opacity: 1;
+}
+.code-copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.code-copy-btn.copied {
+  color: #34d399;
+  border-color: #34d399;
+}
+
+/* Prose headings need IDs for TOC */
+.prose h2, .prose h3, .prose h4 {
+  scroll-margin-top: 5rem;
+}
+
 /* Stagger animation delays */
 .stagger-1 { animation-delay: 0.1s; }
 .stagger-2 { animation-delay: 0.2s; }

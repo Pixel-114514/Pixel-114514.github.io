@@ -11,12 +11,20 @@ export function PostCard({ post, index }: { post: PostMeta; index: number }) {
         opacity-0 animate-slide-up stagger-${index + 1}
       `}
     >
-      <div className="font-mono text-xs text-text-tertiary mb-3">
-        {new Date(post.date).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: '2-digit',
-        })}
+      <div className="font-mono text-xs text-text-tertiary mb-3 flex items-center gap-2">
+        <span>
+          {new Date(post.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+          })}
+        </span>
+        {post.readingTime && (
+          <>
+            <span className="text-border">·</span>
+            <span>{post.readingTime}</span>
+          </>
+        )}
       </div>
       <h3 className="font-semibold text-text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">
         {post.title}
